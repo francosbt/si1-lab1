@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Por que pagar SI1?</title>
+        <meta charset="utf-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script> 
+        $(document).ready(function(){
+            $("#flip").mouseover(function(){
+                $("#panel").slideDown("Slow");
+            });
+        });
+        </script>
+ 
+        <style> 
+            #panel,#flip
+            {
+                padding:5px;
+                text-align:center;
+                background-color:#98fb98;
+                border:solid 1px #c3c3c3;
+            }
+            #panel
+            {
+                padding:50px;
+                display:none;
+            }
+            div.SmoothBorder
+            {
+                border-style:solid;
+                border-color:#98fb98;
+                background-color:#ffffff;
+                border-radius:25px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <h1 style="text-align:center; background-color: MediumSpringGreen;">Por que cursar a disciplina "Sistemas de Informação 1"?</h1>
+        <h2 style="text-align:center; background-color: SpringGreen;">Saiba o porquê de cursar a cadeira e o que você aprenderá ao longo do curso</h2>
+ 
+        <div id="flip">Passe o mouse para saber mais!</div>
+
+        <div id="panel">
+            <div class="SmoothBorder">
+                <p><h5>Hoje em dia, nenhum programador ou profissional da área de TI deve se dar o luxo de não saber
+                nada sobre desenvolvimento web. Em <strong>SI1</strong> o aluno aprenderá sobre html javascript
+                e outras ferramentas usuais e necessárias para que tenha um entendimento básico sobre como
+                desenvolver um sistema web. O aluno também aprenderá a trabalhar usando sistemas de controle
+                de versão (que é indispensável para se fazer qualquer projeto em grupo) como o git.</h5></p>
+                <p><h5>Além disso, <strong>SI1</strong> também trará conhecimento sobre diferentes técnicas de
+                programação que o aluno utilizará no futuro para programar melhor e mais eficientemente
+                (como, por exemplo, TDD, ou <i>Test Driven Development</i>), e estimulará o aluno a estudar
+                o aluno a estudar só e ajudar e ser ajudado por seus colegas, de maneira mais independente
+                do professor.</h5></p>
+                <p><h5>Está convencido? Deseja pagar <strong>SI1</strong> neste período? Clique no link abaixo:</h5></p>
+            </div>
+            <br>
+
+            <div>
+                <form action="form.html">
+                    <button type="submit" class="btn-large btn-success" style="background-color:GreenYellow;">Me convenci</button>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>

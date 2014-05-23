@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Cadastro de aluno</title>
+        <meta charset="utf-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("input").focus(function(){
+                    $(this).css("background-color","MintCream");
+                });
+                $("input").blur(function(){
+                    $(this).css("background-color","White");
+                });
+            });
+        </script>
+
+        <style>
+            div.box1
+            {
+                width:350px;
+                text-align:center;
+                padding:10px;
+                border-width:5px;
+                background-color:#00fa9a;
+                margin:20px;
+                border-radius:25px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            div.box2
+            {
+                width:400px;
+                text-align:center;
+                padding:10px;
+                border-width:5px;
+                background-color:#98fb98;
+                margin:20px;
+                border-radius:25px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box1" style="text-align:center;">
+            <h4>Insira abaixo as informações pedidas e então clique no botão para se cadastrar:</h4>
+        </div>
+
+        <div class="box2" style="text-align:center;">
+            <br>
+            <div class="input-group">
+                <span class="label label-success">Nome: </span>
+                <input type="text" class="form-control" placeholder="Nome completo aqui">
+            </div>
+
+            <div class="input-group">
+                <span class="label label-success">Matrícula: </span>
+                <input type="text" class="form-control" placeholder="#########">
+            </div>
+
+            <div class="input-group">
+                <span class="label label-success">E-mail: </span>
+                <input type="text" class="form-control" placeholder="exemplo@ccc.ufcg.edu.br">
+            </div>
+
+            <form action="assuntos.html">
+                <button type="submit" class="btn-large btn-success">Cadastre-se</button>
+            </form>
+            <br>
+        </div>
+
+    </body>
+
+</html>

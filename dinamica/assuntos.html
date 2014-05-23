@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Assuntos de SI1</title>
+        <meta charset="utf-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#toggle").click(function(){
+                    $("#help").toggle();
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("input").focus(function(){
+                    $(this).css("background-color","MintCream");
+                });
+                $("input").blur(function(){
+                    $(this).css("background-color","White");
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            function add1(event) {
+                if (event.keyCode == 13 || event.type == "click") {
+                    event.preventDefault();
+                        var a = $("#addItemCurrentInput").val();
+                        var b = document.getElementById("listCurrent");
+                        var option = document.createElement("option");
+                        option.text = a;
+                        b.add(option);
+                        $("#addItemCurrentInput").val("");
+                        return false;
+                    }     
+            }
+        </script>
+        </script>
+        <script type="text/javascript">
+            function add2(event) {
+                if (event.keyCode == 13 || event.type == "click") {
+                    event.preventDefault();
+                        var a = $("#addItemLearnedInput").val();
+                        var b = document.getElementById("listLearned");
+                        var option = document.createElement("option");
+                        option.text = a;
+                        b.add(option);
+                        $("#addItemLearnedInput").val("");
+                        return false;
+                    }     
+            }
+        </script>
+        </script>
+        <script type="text/javascript">
+            function erase(event) {
+                if (event.type == "click") {
+                    event.preventDefault();
+                    $("#listCurrent option:selected").remove();
+                    }     
+            }
+        </script>
+        <script type="text/javascript">
+            function move(event) {
+                if (event.type == "click") {
+                    event.preventDefault();
+                    var item = $("#listCurrent option:selected");
+                    $("#listCurrent option:selected").remove();
+                    $("#listLearned").append(item);
+                    }     
+            }
+        </script>
+
+        <style>
+            div.box1
+            {
+                width:600px;
+                text-align:center;
+                padding:10px;
+                border-width:5px;
+                background-color:#00ff7f;
+                margin:20px;
+                border-radius:25px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            div.box2
+            {
+                width:500px;
+                text-align:center;
+                padding:10px;
+                border-width:5px;
+                background-color:#98fb98;
+                margin:20px;
+                border-radius:25px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            table.centeredTable {
+                margin-left:auto; 
+                margin-right:auto;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h3 style="background-color:MediumSpringGreen;text-align:center;">Listas de assuntos e temas</h3>
+
+        <div style="text-align:center;">
+            <button id="toggle" class="btn btn-success">Esconder/mostrar ajuda</button>
+        </div>
+
+        <div id="help" class="box1" style="text-align:center;">
+            <h6>Você pode fazer a manutenção de sua lista de assuntos e temas de SI1! Quando começar a estudar um assunto, digite-o no campo correspondente (assunto corrente) abaixo e clique "enter" ou aperte "OK". Ele será automaticamente adicionado à sua lista de "Assuntos correntes". Quando julgar que aprendeu um assunto corretamente, pode clicar no botão apropriado para movê-lo para a lista de "Assuntos aprendidos. Matriculou-se na cadeira já sabendo de um assunto? Sem problemas, pode adicioná-lo diretamente usando o campo correspondente (assunto aprendido) abaixo"</h6>
+        </div>
+
+        <div class="box2" style="text-align:center;">
+
+            <br>
+
+            <div class="input-group">
+                <span class="label label-success">Assunto corrente: </span>
+                <form id="addItemCurrent">
+                    <input id="addItemCurrentInput" type="text" class="submit" placeholder="Assunto ou tema de si1" onkeypress="add1(event)">
+                    <button id="ok1" class="btn btn-success" onclick="add1(event)">OK</button>
+                </form>
+            </div>
+
+            <div class="input-group">
+                <span class="label label-success">Assunto aprendido: </span>
+                <form id="addItemLearned">
+                    <input id="addItemLearnedInput" type="text" class="submit" placeholder="Assunto ou tema de si1" onkeypress="add2(event)">
+                    <button id="ok2" class="btn btn-success" onclick="add2(event)">OK</button>
+                </form>
+            </div>
+
+            <br>
+
+        </div>
+
+        <table class="centeredTable" style="width:800px;text-align:center;">
+            <tr>
+        
+                <td>
+                    <select id="listCurrent"></select>
+                </td>
+
+                <td>
+                    <form id="eraseItem">
+                        <button id="eraseButton" class="btn btn-danger" onclick="erase(event)">Apagar item</button>
+                    </form>
+                </td>
+
+                <td>
+                    <form id="moveItem">
+                        <button id="moveButton" class="btn btn-primary" onclick="move(event)">>>>></button>
+                    </form>
+                </td>
+
+                <td>
+                    <select id="listLearned"></select>
+                </td>
+
+                <td>
+                    <form action="index.html">
+                        <button type="submit" class="btn btn-info">Voltar para o início</button>
+                    </form>
+                </td>
+
+            </tr>
+        </table>
+
+    </body>
+
+</html>
